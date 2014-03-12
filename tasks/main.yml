@@ -1,0 +1,4 @@
+---
+- name: newsyslog.conf
+  template: src=newsyslog.conf.j2 dest=/etc/newsyslog.conf owner=root group=wheel mode=444
+  tags: newsyslog

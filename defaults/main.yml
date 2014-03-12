@@ -1,0 +1,118 @@
+newsyslog_config: []
+newsyslog_config_defaults:
+  - filename: /var/log/all.log
+    mode: 600
+    count: 7
+    size: '*'
+    when: '@T00'
+    flags: J
+  - filename: /var/log/amd.log
+    mode: 644
+    count: 7
+    size: 100
+    when: '*'
+    flags: J
+  - filename: /var/log/auth.log
+    mode: 600
+    count: 7
+    size: 100
+    when: '@0101T'
+    flags: JC
+  - filename: /var/log/console.log
+    mode: 600
+    count: 5
+    size: 100
+    when: '*'
+    flags: J
+  - filename: /var/log/cron
+    mode: 600
+    count: 3
+    size: 100
+    when: '*'
+    flags: JC
+  - filename: /var/log/daily.log
+    mode: 640
+    count: 7
+    size: '*'
+    when: '@T00'
+    flags: JN
+  - filename: /var/log/debug.log
+    mode: 600
+    count: 7
+    size: 100
+    when: '*'
+    flags: JC
+  - filename: /var/log/kerberos.log
+    mode: 600
+    count: 7
+    size: 100
+    when: '*'
+    flags: J
+  - filename: /var/log/lpd-errs.log
+    mode: 644
+    count: 7
+    size: 100
+    when: '*'
+    flags: JC
+  - filename: /var/log/maillog.log
+    mode: 640
+    count: 7
+    size: '*'
+    when: '@T00'
+    flags: JC
+  - filename: /var/log/messages.log
+    mode: 644
+    count: 5
+    size: 100
+    when: '@0101T'
+    flags: JC
+  - filename: /var/log/monthly.log
+    mode: 640
+    count: 12
+    size: '*'
+    when: '$M1D0'
+    flags: JN
+  - filename: /var/log/pflog
+    mode: 600
+    count: 3
+    size: 100
+    when: '*'
+    flags: JB
+    pidfile: '/var/run/pflogd.pid'
+  - filename: /var/log/ppp.log
+    owner: 'root:network'
+    mode: 640
+    count: 3
+    size: 100
+    when: '*'
+    flags: JC
+  - filename: /var/log/security
+    mode: 600
+    count: 10
+    size: 100
+    when: '*'
+    flags: JC
+  - filename: /var/log/sendmail.st
+    mode: 640
+    count: 10
+    size: '*'
+    when: '168'
+    flags: B
+  - filename: /var/log/utx.log
+    mode: 644
+    count: 3
+    size: '*'
+    when: '@01T05'
+    flags: B
+  - filename: /var/log/weekly.log
+    mode: 640
+    count: 5
+    size: 1
+    when: '$W6D0'
+    flags: JN
+  - filename: /var/log/xferlog
+    mode: 600
+    count: 7
+    size: 100
+    when: '*'
+    flags: JC
